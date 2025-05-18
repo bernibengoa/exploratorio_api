@@ -1,11 +1,21 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
 
 @app.get("/")
 def home():
     return {"mensaje": "¡Hola, la API está funcionando!"}
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # En producción pon tu dominio Firebase
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
     
 # Modelo de entrada para huella de carbono
 class CarbonFootprintInput(BaseModel):
