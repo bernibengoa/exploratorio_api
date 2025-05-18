@@ -3,7 +3,10 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-
+@app.get("/")
+def home():
+    return {"mensaje": "¡Hola, la API está funcionando!"}
+    
 # Modelo de entrada para huella de carbono
 class CarbonFootprintInput(BaseModel):
     km_por_semana: float  # kilómetros en auto por semana
