@@ -43,3 +43,7 @@ def calcular_ahorro(data: SolarSavingsInput):
         "ahorro_mensual_CLP": round(ahorro_mensual, 1),
         "ahorro_anual_CLP": round(ahorro_anual, 1),
     }
+# Flask (Python)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
+
