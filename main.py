@@ -1,8 +1,9 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from fastapi.middleware.cors import CORSMiddleware
 from enum import Enum
 import os
+
 app = FastAPI()
 
 @app.get("/")
