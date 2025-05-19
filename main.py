@@ -49,7 +49,7 @@ def calcular_huella(data: CarbonFootprintInput):
 @app.post("/ahorro-paneles")
 def calcular_ahorro(data: SolarSavingsInput):
     energia_generada = data.consumo_kwh_mensual * data.porcentaje_cubierto
-    ahorro_mensual = energia_generada * data.costo_kwh
+    ahorro_mensual = energia_generada 
     ahorro_anual = ahorro_mensual * 12
     return {
         "kwh_generados_mensuales": round(energia_generada, 1),
